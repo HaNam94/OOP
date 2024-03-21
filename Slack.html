@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    class Rectangle{
+        chieuDai;
+        chieuRong;
+        constructor(chieuDaiInput, chieuRongInput) {
+            this.chieuDai = chieuDaiInput;
+            this.chieuRong = chieuRongInput;
+        }
+        DienTich(){
+            console.log("Diện Tích:" + this.chieuDai*this.chieuRong);
+        }
+        ChuVi(){
+            console.log("Chu Vi:" + 2*(this.chieuDai+this.chieuRong));
+        }
+    }
+    let HCN = new Rectangle(5,3);
+    console.log(HCN);
+    HCN.DienTich();
+    HCN.ChuVi();
+    HCN.chieuDai=10;
+    HCN.chieuRong=7;
+    HCN.DienTich();
+    HCN.ChuVi();
+
+
+</script>
+</body>
+</html>

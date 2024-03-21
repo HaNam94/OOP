@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Ứng dụng mô tả điện thoại</title>
+</head>
+<body>
+<p>
+    Cách khống chế pin từ 0 ~ 100.
+</p>
+<script>
+    function Mobile(){
+        this.battery = null;
+        this.tnDangSoan = [];
+        this.inbox = [];
+        this.tnDaGui = [];
+        this.status = null;
+        this.reduceBattery = function() {
+            this.battery--;
+        }
+        this.turnOn = function() {
+            if (this.battery !==0){
+                this.status = "On";
+            }
+        }
+        this.turnOff = function() {
+            this.status = "Off";
+        }
+        this.checkStatus = function() {
+            this.reduceBattery();
+            if (this.battery==0){
+                this.status = "Off";
+            }
+            return this.status;
+        }
+        this.chargeBattery = function() {
+            this.battery = 100;
+        }
+        this.writeMsg= function(reciver, msg) {
+            if (this.checkStatus() == "On") {
+                this.reduceBattery();
+                this.tnDaGui.push(msg);
+                reciver.reciveMsg(msg);
+            }
+        }
+        this.reciveMsg = function (msg) {
+                this.inbox.push(msg);
+            }
+
+        this.viewInbox = function (msg){
+            if (this.checkStatus()=="On"){
+                this.reduceBattery();
+                console.log(this.inbox)
+            }
+        }
+        this.viewTnDaGui = function (){
+            if (this.checkStatus()=="On"){
+                this.reduceBattery();
+                return this.tnDaGui;
+            }
+        }
+
+    }
+    function main() {
+        let phone1 = new Mobile();
+        let phone2 = new Mobile();
+        phone1.turnOn();
+        phone2.turnOn();
+        phone1.chargeBattery();
+        phone2.chargeBattery();
+        phone1.writeMsg(phone2, "hello");
+        phone2.writeMsg(phone1, "whatsup babe");
+        phone1.writeMsg(phone2, "i missing you");
+        phone2.writeMsg(phone1, "i missing too");
+        console.log(phone1.checkStatus());
+        console.log(phone2.checkStatus());
+        phone1.viewInbox();
+        phone2.viewInbox();
+    }
+    main();
+
+
+
+</script>
+</script>
+</body>
+</html>
