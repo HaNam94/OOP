@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    // class Person{ // là bản mô tả chung của cá đối tượng
+    //     id; // Đây là thuộc tính mô tả cho các đối tượng đặc biệt
+    //     name;
+    //     gender;
+    //
+    //     constructor(idInput, nameInput, genderInput) { // Hàm constructor : Nhận vào các giá trị và tạo ra đối tượng
+    //         this.id = idInput;
+    //         this.name = nameInput;
+    //         this.gender = genderInput;
+    //     }
+    //
+    //     run(){ // Phương thức; là các hành động mà đối tượng có thể thực hiện
+    //         console.log("person is running");
+    //     }
+    // }
+    //
+    // let person1 = new person(1, "Linh" , "Nam"); // Đối tượng là đối tượng cụ thể sinh ra từ lớp
+    // console.log(person1.id); // Truy xuất thuộc tính của đối tượng
+    // console.log(person1.name);
+    // person1.name = "C02";
+    // console.log(person1.name);
+    // person1.run(); // Truy xuất phương thức của đối tượng
+
+    // Tọa một lớp Cat có name. màu lông, giống và hành động ăn, kêu.
+    // Tạo một đối tượng mèo cụ thể từ lớp trên.
+
+    class Cat {
+        name;
+        mauLong;
+        giong;
+        constructor(nameInput, mauLongInput, giongInput) {
+            this.name = nameInput;
+            this.giong = giongInput;
+            this.mauLong = mauLongInput;
+        }
+        eat(){
+            console.log("Mèo đăng ăn")
+        }
+        sounding(){
+            console.log("Meo Meo")
+        }
+    }
+    let cat = new Cat("Sonic", "Orange", "Maine Coon");
+    console.log(cat);
+    cat.eat();
+    cat.sounding();
+
+</script>
+</body>
+</html>
