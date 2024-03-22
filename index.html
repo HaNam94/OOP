@@ -32,26 +32,53 @@
     // Tọa một lớp Cat có name. màu lông, giống và hành động ăn, kêu.
     // Tạo một đối tượng mèo cụ thể từ lớp trên.
 
-    class Cat {
-        name;
-        mauLong;
-        giong;
-        constructor(nameInput, mauLongInput, giongInput) {
-            this.name = nameInput;
-            this.giong = giongInput;
-            this.mauLong = mauLongInput;
-        }
-        eat(){
-            console.log("Mèo đăng ăn")
-        }
-        sounding(){
-            console.log("Meo Meo")
-        }
+    // class Cat {
+    //     name;
+    //     mauLong;
+    //     giong;
+    //     constructor(nameInput, mauLongInput, giongInput) {
+    //         this.name = nameInput;
+    //         this.giong = giongInput;
+    //         this.mauLong = mauLongInput;
+    //     }
+    //     eat(){
+    //         console.log("Mèo đăng ăn")
+    //     }
+    //     sounding(){
+    //         console.log("Meo Meo")
+    //     }
+    // }
+    // let cat = new Cat("Sonic", "Orange", "Maine Coon");
+    // console.log(cat);
+    // cat.eat();
+    // cat.sounding();
+
+    function  func(a, b){
+        a = 1;
+        b = 2;
     }
-    let cat = new Cat("Sonic", "Orange", "Maine Coon");
-    console.log(cat);
-    cat.eat();
-    cat.sounding();
+    let num1= 0;
+    let num2 = 0
+    func(num1, num2);
+    console.log(num1, num2);
+
+    function func(obj) {
+        obj.name = 'Meo meo'
+    }
+    let l = {
+        name: 'Ning'
+    }
+    func(l);
+    console.log(l);
+
+    let obj1 ={
+        name: 'Ning'
+    }
+    let obj2 = {
+        name: 'Ning'
+    }
+    console.log(obj1 === obj2)
+
 
 </script>
 </body>
